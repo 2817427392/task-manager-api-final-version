@@ -24,6 +24,8 @@ export class FindTaskByIdService {
         name: true,
         description: true,
         statusId: true,
+        createdAt: true,
+        updatedAt: true,
         status: {
           select: {
             id: true,
@@ -33,7 +35,7 @@ export class FindTaskByIdService {
       },
     });
     if (!taskExists) throw new NotFoundException('Tarefa não encontrada');
- 
+
     return taskExists
   }
 }
