@@ -10,7 +10,7 @@ export class FindTaskAllService {
     private readonly redisService: RedisService) {
   }
 
-  public async execute(): Promise<FindTaskAllOutputDTO | {id, name, description, statusId, createdAt, updatedAt, status} | null>{
+  public async execute(): Promise<any>{
  
     const keyName = "tasks:all";
     const redisValues = await this.redisService.getAllTasks(keyName);
